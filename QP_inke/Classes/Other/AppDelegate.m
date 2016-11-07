@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "QPTabBarViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    UIViewController * mainVC = [[QPTabBarViewController alloc] init];
+    self.window.rootViewController = mainVC;
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
