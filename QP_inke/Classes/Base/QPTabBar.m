@@ -16,9 +16,24 @@
 
 @property (nonatomic, strong) UIButton * lastItem;
 
+@property (nonatomic, strong) UIButton * liveButton;
+
 @end
 
 @implementation QPTabBar
+
+- (UIButton *)liveButton {
+    
+    if (!_liveButton) {
+        _liveButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_liveButton setImage:[UIImage imageNamed:@"tab_launch"] forState:UIControlStateNormal];
+//        [_liveButton sizeToFit];
+        _liveButton.tag = QPItemTypeLive;
+        [_liveButton addTarget:self action:@selector(clickItem:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _liveButton;
+    
+}
 
 - (NSArray *)datalist {
     
@@ -69,6 +84,9 @@
             [self addSubview:item];
         }
         
+        //添加直播按钮
+        [self addSubview:self.liveButton];
+        
     }
     return self;
 }
@@ -92,6 +110,9 @@
         }
     }
     
+    [self.liveButton sizeToFit];
+    self.liveButton.center = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height - 49);
+
 }
 
 - (void)clickItem:(UIButton *)button {
@@ -104,6 +125,10 @@
 //    if (self.block) {
 //        self.block(self, button.tag);
 //    }
+    
+    if (button.tag == QPItemTypeLive) {
+        return;
+    }
     
     self.lastItem.selected = NO;
     button.selected = YES;

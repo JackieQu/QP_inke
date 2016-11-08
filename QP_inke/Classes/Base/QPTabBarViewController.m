@@ -9,6 +9,7 @@
 #import "QPTabBarViewController.h"
 #import "QPTabBar.h"
 #import "QPBaseNavViewController.h"
+#import "QPLiveViewController.h"
 
 @interface QPTabBarViewController ()<QPTabBarDelegate>
 
@@ -30,8 +31,14 @@
 
 - (void)tabbar:(QPTabBar *)tabbar clickButton:(QPItemType)idx {
     
-    self.selectedIndex = idx - QPItemTypeShow;
+    if (idx != QPItemTypeLive) {
+        self.selectedIndex = idx - QPItemTypeShow;
+        return;
+    }
     
+    QPLiveViewController * liveVC = [[QPLiveViewController alloc] init];
+    
+    [self presentViewController:liveVC animated:YES  completion:nil];
 }
 
 - (void)viewDidLoad {
@@ -43,6 +50,10 @@
     
     //加载tabbar
     [self.tabBar addSubview:self.qpTabbar];
+    
+    //删除tabbar阴影线
+    [[UITabBar appearance] setShadowImage:[UIImage new]];
+    [[UITabBar appearance] setBackgroundImage:[UIImage   new]];
 }
 
 - (void)configViewControllers {

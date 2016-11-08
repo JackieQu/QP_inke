@@ -10,6 +10,7 @@
 
 typedef NS_ENUM(NSUInteger, QPItemType) {
 
+    QPItemTypeLive = 10,
     QPItemTypeShow = 100,
     QPItemTypeMe,
     
