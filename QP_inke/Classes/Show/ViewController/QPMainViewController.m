@@ -10,28 +10,97 @@
 
 @interface QPMainViewController ()
 
+@property (weak, nonatomic) IBOutlet UIScrollView *contenScrollView;
+
+@property (nonatomic, strong) NSArray * datalist;
+
 @end
 
 @implementation QPMainViewController
 
+- (NSArray *)datalist {
+    
+    if (!_datalist) {
+        _datalist = @[@"关注",@"热门",@"附近"];
+    }
+    return _datalist;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self initUI];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)initUI {
+    
+    //添加左右按钮
+    [self setupNav];
+    
+    //添加子视图控制器
+    [self setupChildViewControllers];
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)setupChildViewControllers {
+    
+    NSArray * vcNames = @[@"QPFocusViewController",@"QPHotViewController",@"QPNearViewController"];
+    
+    for (NSInteger i = 0; i < vcNames.count; i ++) {
+        
+        NSString * vcName = vcNames[i];
+        
+        UIViewController * vc = [[NSClassFromString(vcName) alloc] init];
+        vc.title = self.datalist[i];
+        //执行 addChildViewController 时，不会执行 viewdidload
+        [self addChildViewController:vc];
+    }
+    
+    //将子控制器的 view 加到 mainVC 的 scrollview 上
+    
+    
+    //设置 scrollview 的 contentsize
+    self.contenScrollView.contentSize = CGSizeMake(SCREEN_WIDTH * self.datalist.count, 0);
+    
+    //默认先展示第二个页面
+    self.contenScrollView.contentOffset = CGPointMake(SCREEN_WIDTH, 0);
+    
+    //进入主控制器加载第一个页面
+    [self scrollViewDidEndDecelerating:self.contenScrollView];
+    
 }
-*/
+
+- (void)setupNav {
+    
+    self.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"global_search"] style:UIBarButtonItemStyleDone target:nil action:nil];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"title_button_more"] style:UIBarButtonItemStyleDone target:nil action:nil];
+    
+}
+
+//减速结束时调用加载子控制器 view 的方法
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    
+    CGFloat width  = SCREEN_WIDTH;//scrollView.frame.size.width;
+    CGFloat height = SCREEN_HEIGHT;
+    
+    CGFloat offset = scrollView.contentOffset.x;
+    //获取索引值
+    NSInteger idx = offset / width;
+    
+    //根据索引值返回 vc 的引用
+    UIViewController * vc = self.childViewControllers[idx];
+    
+    //判断当前 vc 是否执行过 viewDidLoad
+    if ([vc isViewLoaded]) return;
+    
+    //设置子控制器 view 的大小
+    vc.view.frame = CGRectMake(offset, 0, scrollView.frame.size.width, height);
+    
+    //将子控制器的 view 加入 scrollview 上
+    [scrollView addSubview:vc.view];
+    
+}
 
 @end
