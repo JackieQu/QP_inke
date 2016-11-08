@@ -7,31 +7,62 @@
 //
 
 #import "QPHotViewController.h"
+#import "QPShowHandler.h"
 
 @interface QPHotViewController ()
+
+@property (nonatomic, strong) NSMutableArray * datalist;
 
 @end
 
 @implementation QPHotViewController
 
+- (NSMutableArray *)datalist {
+    
+    if (!_datalist) {
+        _datalist = [NSMutableArray array];
+    }
+    return _datalist;
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return self.datalist.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return nil;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view from its nib.\
+    
+    [self initUI];
+    
+    [self loadData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)initUI {
+    
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)loadData {
+    
+    [QPShowHandler executeGetHotLiveTaskWithSuccess:^(id obj) {
+        
+        [self.datalist addObjectsFromArray:obj];
+        [self.tableView reloadData];
+        
+    } failed:^(id obj) {
+        
+        NSLog(@"%@",obj);
+    }];
+    
+    
 }
-*/
 
 @end

@@ -30,6 +30,14 @@
 		285093BC1DD1B5860071F96D /* QPNearViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 285093BA1DD1B5860071F96D /* QPNearViewController.m */; };
 		285093BD1DD1B5860071F96D /* QPNearViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 285093BB1DD1B5860071F96D /* QPNearViewController.xib */; };
 		285093C01DD1C2E60071F96D /* QPMainTopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 285093BF1DD1C2E60071F96D /* QPMainTopView.m */; };
+		285093C61DD1D2980071F96D /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 285093C31DD1D2980071F96D /* HttpTool.m */; };
+		285093C71DD1D2980071F96D /* UIImageView+SDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 285093C51DD1D2980071F96D /* UIImageView+SDWebImage.m */; };
+		285093CD1DD1D5DB0071F96D /* QPBaseHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 285093CC1DD1D5DB0071F96D /* QPBaseHandler.m */; };
+		285093D01DD1D7120071F96D /* QPShowHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 285093CF1DD1D7120071F96D /* QPShowHandler.m */; };
+		285093D71DD1DB7C0071F96D /* QPLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 285093D21DD1DB7C0071F96D /* QPLive.m */; };
+		285093D81DD1DB7C0071F96D /* QPCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = 285093D41DD1DB7C0071F96D /* QPCreator.m */; };
+		285093D91DD1DB7C0071F96D /* QPAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 285093D61DD1DB7C0071F96D /* QPAd.m */; };
+		285093DC1DD1DC5D0071F96D /* MJExtensionConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 285093DB1DD1DC5D0071F96D /* MJExtensionConfig.m */; };
 		2EA8396354D791C4E333129B /* libPods-QP_inke.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6804BBBFDF56398E5B793C2 /* libPods-QP_inke.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +82,23 @@
 		285093BB1DD1B5860071F96D /* QPNearViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QPNearViewController.xib; sourceTree = "<group>"; };
 		285093BE1DD1C2E60071F96D /* QPMainTopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPMainTopView.h; sourceTree = "<group>"; };
 		285093BF1DD1C2E60071F96D /* QPMainTopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPMainTopView.m; sourceTree = "<group>"; };
+		285093C11DD1D1A30071F96D /* APIConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIConfig.h; sourceTree = "<group>"; };
+		285093C21DD1D2980071F96D /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
+		285093C31DD1D2980071F96D /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
+		285093C41DD1D2980071F96D /* UIImageView+SDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SDWebImage.h"; sourceTree = "<group>"; };
+		285093C51DD1D2980071F96D /* UIImageView+SDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SDWebImage.m"; sourceTree = "<group>"; };
+		285093CB1DD1D5DB0071F96D /* QPBaseHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPBaseHandler.h; sourceTree = "<group>"; };
+		285093CC1DD1D5DB0071F96D /* QPBaseHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPBaseHandler.m; sourceTree = "<group>"; };
+		285093CE1DD1D7120071F96D /* QPShowHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QPShowHandler.h; path = QP_inke/Classes/Base/QPShowHandler.h; sourceTree = SOURCE_ROOT; };
+		285093CF1DD1D7120071F96D /* QPShowHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QPShowHandler.m; path = QP_inke/Classes/Base/QPShowHandler.m; sourceTree = SOURCE_ROOT; };
+		285093D11DD1DB7C0071F96D /* QPLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPLive.h; sourceTree = "<group>"; };
+		285093D21DD1DB7C0071F96D /* QPLive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPLive.m; sourceTree = "<group>"; };
+		285093D31DD1DB7C0071F96D /* QPCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPCreator.h; sourceTree = "<group>"; };
+		285093D41DD1DB7C0071F96D /* QPCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPCreator.m; sourceTree = "<group>"; };
+		285093D51DD1DB7C0071F96D /* QPAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPAd.h; sourceTree = "<group>"; };
+		285093D61DD1DB7C0071F96D /* QPAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPAd.m; sourceTree = "<group>"; };
+		285093DA1DD1DC5D0071F96D /* MJExtensionConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConfig.h; sourceTree = "<group>"; };
+		285093DB1DD1DC5D0071F96D /* MJExtensionConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionConfig.m; sourceTree = "<group>"; };
 		7626B6083C112A1306665D19 /* Pods-QP_inke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QP_inke.release.xcconfig"; path = "Pods/Target Support Files/Pods-QP_inke/Pods-QP_inke.release.xcconfig"; sourceTree = "<group>"; };
 		DE8E208E258685779A435E7D /* Pods-QP_inke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QP_inke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QP_inke/Pods-QP_inke.debug.xcconfig"; sourceTree = "<group>"; };
 		F6804BBBFDF56398E5B793C2 /* libPods-QP_inke.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QP_inke.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +180,8 @@
 				2850939B1DD0F27D0071F96D /* QPBaseNavViewController.m */,
 				2850939D1DD0F2B20071F96D /* QPBaseViewController.h */,
 				2850939E1DD0F2B20071F96D /* QPBaseViewController.m */,
+				285093CB1DD1D5DB0071F96D /* QPBaseHandler.h */,
+				285093CC1DD1D5DB0071F96D /* QPBaseHandler.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -192,6 +219,7 @@
 		285093781DD0D5670071F96D /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				285093CA1DD1D5740071F96D /* Handler */,
 				285093791DD0D5670071F96D /* Model */,
 				2850937A1DD0D5670071F96D /* View */,
 				2850937B1DD0D5670071F96D /* ViewController */,
@@ -226,6 +254,7 @@
 		2850937C1DD0D5670071F96D /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				285093C91DD1D5660071F96D /* Handler */,
 				2850937D1DD0D5670071F96D /* Model */,
 				2850937E1DD0D5670071F96D /* View */,
 				2850937F1DD0D5670071F96D /* ViewController */,
@@ -260,6 +289,11 @@
 		285093801DD0D5670071F96D /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				285093C11DD1D1A30071F96D /* APIConfig.h */,
+				285093C21DD1D2980071F96D /* HttpTool.h */,
+				285093C31DD1D2980071F96D /* HttpTool.m */,
+				285093C41DD1D2980071F96D /* UIImageView+SDWebImage.h */,
+				285093C51DD1D2980071F96D /* UIImageView+SDWebImage.m */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -274,6 +308,8 @@
 				285093861DD0D5670071F96D /* ViewController.m */,
 				2850938E1DD0E2670071F96D /* QPMacros.h */,
 				2850938F1DD0E3750071F96D /* inke.pch */,
+				285093DA1DD1DC5D0071F96D /* MJExtensionConfig.h */,
+				285093DB1DD1DC5D0071F96D /* MJExtensionConfig.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -281,6 +317,7 @@
 		285093871DD0D5670071F96D /* Show */ = {
 			isa = PBXGroup;
 			children = (
+				285093C81DD1D55C0071F96D /* Handler */,
 				285093881DD0D5670071F96D /* Model */,
 				285093891DD0D5670071F96D /* View */,
 				2850938A1DD0D5670071F96D /* ViewController */,
@@ -291,6 +328,12 @@
 		285093881DD0D5670071F96D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				285093D11DD1DB7C0071F96D /* QPLive.h */,
+				285093D21DD1DB7C0071F96D /* QPLive.m */,
+				285093D31DD1DB7C0071F96D /* QPCreator.h */,
+				285093D41DD1DB7C0071F96D /* QPCreator.m */,
+				285093D51DD1DB7C0071F96D /* QPAd.h */,
+				285093D61DD1DB7C0071F96D /* QPAd.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,6 +364,32 @@
 				285093BB1DD1B5860071F96D /* QPNearViewController.xib */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		285093C81DD1D55C0071F96D /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				285093CE1DD1D7120071F96D /* QPShowHandler.h */,
+				285093CF1DD1D7120071F96D /* QPShowHandler.m */,
+			);
+			name = Handler;
+			path = Handle;
+			sourceTree = "<group>";
+		};
+		285093C91DD1D5660071F96D /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Handler;
+			path = Handle;
+			sourceTree = "<group>";
+		};
+		285093CA1DD1D5740071F96D /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Handler;
+			path = Handle;
 			sourceTree = "<group>";
 		};
 		90EF3D65A916A175EB95AC9D /* Frameworks */ = {
@@ -472,18 +541,26 @@
 			files = (
 				2850938D1DD0D5670071F96D /* ViewController.m in Sources */,
 				2850939F1DD0F2B20071F96D /* QPBaseViewController.m in Sources */,
+				285093C71DD1D2980071F96D /* UIImageView+SDWebImage.m in Sources */,
 				285093C01DD1C2E60071F96D /* QPMainTopView.m in Sources */,
 				2850938C1DD0D5670071F96D /* main.m in Sources */,
 				285093B71DD1B5790071F96D /* QPHotViewController.m in Sources */,
+				285093DC1DD1DC5D0071F96D /* MJExtensionConfig.m in Sources */,
 				285093A81DD17CD30071F96D /* QPMeViewController.m in Sources */,
 				285093BC1DD1B5860071F96D /* QPNearViewController.m in Sources */,
+				285093CD1DD1D5DB0071F96D /* QPBaseHandler.m in Sources */,
 				2850939C1DD0F27D0071F96D /* QPBaseNavViewController.m in Sources */,
 				285093AD1DD1A3D90071F96D /* QPLiveViewController.m in Sources */,
 				2850938B1DD0D5670071F96D /* AppDelegate.m in Sources */,
+				285093D71DD1DB7C0071F96D /* QPLive.m in Sources */,
+				285093D01DD1D7120071F96D /* QPShowHandler.m in Sources */,
+				285093D91DD1DB7C0071F96D /* QPAd.m in Sources */,
 				285093991DD0F2400071F96D /* QPTabBar.m in Sources */,
+				285093D81DD1DB7C0071F96D /* QPCreator.m in Sources */,
 				285093B21DD1B5520071F96D /* QPFocusViewController.m in Sources */,
 				285093A31DD17CB60071F96D /* QPMainViewController.m in Sources */,
 				285093961DD0F20C0071F96D /* QPTabBarViewController.m in Sources */,
+				285093C61DD1D2980071F96D /* HttpTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
