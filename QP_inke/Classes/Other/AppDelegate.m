@@ -19,10 +19,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    UIViewController * mainVC = [[QPTabBarViewController alloc] init];
-    self.window.rootViewController = mainVC;
+    QPTabBarViewController * mainVC = [[QPTabBarViewController alloc] init];
     
-    [self.window makeKeyAndVisible];
+    self.window.rootViewController = mainVC;
     
     return YES;
 }
