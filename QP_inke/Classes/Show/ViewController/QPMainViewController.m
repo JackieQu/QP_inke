@@ -121,7 +121,7 @@
     if ([vc isViewLoaded]) return;
     
     //设置子控制器 view 的大小
-    vc.view.frame = CGRectMake(offset, 0, scrollView.frame.size.width, height);
+    vc.view.frame = CGRectMake(offset, 0, width, height);
     
     //将子控制器的 view 加入 scrollview 上
     [scrollView addSubview:vc.view];

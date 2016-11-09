@@ -8,11 +8,37 @@
 
 #import "QPShowCell.h"
 
+@interface QPShowCell ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *coverView;
+@property (weak, nonatomic) IBOutlet UIImageView *headView;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UILabel *onLineLabel;
+
+
+@end
+
 @implementation QPShowCell
+
+- (void)setLive:(QPLive *)live {
+    
+    _live = live;
+    
+    [self.coverView downloadImage:[NSString stringWithFormat:@"%@%@",IMAGE_HOST,live.creator.portrait] placeholder:@"default_room"];
+    [self.headView downloadImage:[NSString stringWithFormat:@"%@%@",IMAGE_HOST,live.creator.portrait] placeholder:@"default_room"];
+    self.nameLabel.text     = live.creator.nick;
+    self.locationLabel.text = live.city;
+    self.onLineLabel.text   = [@(live.onlineUsers) stringValue];
+        
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
+    self.headView.layer.cornerRadius  = 25;
+    self.headView.layer.masksToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

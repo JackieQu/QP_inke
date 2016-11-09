@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QPLive.h"
 
 @interface QPShowCell : UITableViewCell
+
+@property (nonatomic, strong) QPLive * live;
 
 @end

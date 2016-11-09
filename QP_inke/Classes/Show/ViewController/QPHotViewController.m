@@ -8,6 +8,9 @@
 
 #import "QPHotViewController.h"
 #import "QPShowHandler.h"
+#import "QPShowCell.h"
+
+static NSString * identifier = @"QPShowCell";
 
 @interface QPHotViewController ()
 
@@ -33,7 +36,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    return nil;
+    QPShowCell * cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    cell.live = self.datalist[indexPath.row];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 70 + SCREEN_WIDTH;
 }
 
 - (void)viewDidLoad {
@@ -47,7 +59,7 @@
 
 - (void)initUI {
     
-    
+    [self.tableView registerNib:[UINib nibWithNibName:@"QPShowCell" bundle:nil] forCellReuseIdentifier:identifier];
 }
 
 - (void)loadData {
