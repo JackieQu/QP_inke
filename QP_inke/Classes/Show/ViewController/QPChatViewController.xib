@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QPChatViewController">
             <connections>
+                <outlet property="iconView" destination="ppF-FB-h36" id="c7F-xX-hYb"/>
+                <outlet property="numLabel" destination="Bo7-27-sFF" id="fl2-rJ-OSJ"/>
+                <outlet property="shareBtn" destination="wH7-A4-Dvm" id="dj7-pv-ybG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
