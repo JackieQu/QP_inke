@@ -8,6 +8,7 @@
 
 #import "QPPlayerViewController.h"
 #import <IJKMediaFramework/IJKMediaFramework.h>
+#import "QPChatViewController.h"
 
 @interface QPPlayerViewController ()
 
@@ -17,9 +18,19 @@
 
 @property (nonatomic ,strong) UIImageView * blurImageView;
 
+@property (nonatomic, strong) QPChatViewController * chatVC;
+
 @end
 
 @implementation QPPlayerViewController
+
+- (QPChatViewController *)chatVC {
+    
+    if (!_chatVC) {
+        _chatVC = [[QPChatViewController alloc] init];
+    }
+    return _chatVC;
+}
 
 - (UIButton *)closeBtn {
     
@@ -79,6 +90,24 @@
     
     [self initUI];
 
+    [self addChildVC];
+
+}
+
+- (void)addChildVC {
+    
+    [self addChildViewController:self.chatVC];
+    
+    [self.view addSubview:self.chatVC.view];
+    
+    [self.chatVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.edges.equalTo(self.view);
+        
+    }];
+    
+    self.chatVC.live = self.live;
+    
 }
 
 - (void)initUI {

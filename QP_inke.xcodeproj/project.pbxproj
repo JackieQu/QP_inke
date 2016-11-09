@@ -55,6 +55,8 @@
 		28831B0F1DD2F33C008E33E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28831B0E1DD2F33C008E33E9 /* UIKit.framework */; };
 		28831B111DD2F345008E33E9 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28831B101DD2F345008E33E9 /* VideoToolbox.framework */; };
 		28831B141DD30244008E33E9 /* QPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28831B131DD30244008E33E9 /* QPPlayerViewController.m */; };
+		28831B181DD30DC4008E33E9 /* QPChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28831B161DD30DC4008E33E9 /* QPChatViewController.m */; };
+		28831B191DD30DC4008E33E9 /* QPChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28831B171DD30DC4008E33E9 /* QPChatViewController.xib */; };
 		2EA8396354D791C4E333129B /* libPods-QP_inke.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6804BBBFDF56398E5B793C2 /* libPods-QP_inke.a */; };
 /* End PBXBuildFile section */
 
@@ -135,6 +137,9 @@
 		28831B101DD2F345008E33E9 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		28831B121DD30244008E33E9 /* QPPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPPlayerViewController.h; sourceTree = "<group>"; };
 		28831B131DD30244008E33E9 /* QPPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPPlayerViewController.m; sourceTree = "<group>"; };
+		28831B151DD30DC4008E33E9 /* QPChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPChatViewController.h; sourceTree = "<group>"; };
+		28831B161DD30DC4008E33E9 /* QPChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPChatViewController.m; sourceTree = "<group>"; };
+		28831B171DD30DC4008E33E9 /* QPChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QPChatViewController.xib; sourceTree = "<group>"; };
 		7626B6083C112A1306665D19 /* Pods-QP_inke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QP_inke.release.xcconfig"; path = "Pods/Target Support Files/Pods-QP_inke/Pods-QP_inke.release.xcconfig"; sourceTree = "<group>"; };
 		DE8E208E258685779A435E7D /* Pods-QP_inke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QP_inke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QP_inke/Pods-QP_inke.debug.xcconfig"; sourceTree = "<group>"; };
 		F6804BBBFDF56398E5B793C2 /* libPods-QP_inke.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QP_inke.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -417,6 +422,9 @@
 				285093BB1DD1B5860071F96D /* QPNearViewController.xib */,
 				28831B121DD30244008E33E9 /* QPPlayerViewController.h */,
 				28831B131DD30244008E33E9 /* QPPlayerViewController.m */,
+				28831B151DD30DC4008E33E9 /* QPChatViewController.h */,
+				28831B161DD30DC4008E33E9 /* QPChatViewController.m */,
+				28831B171DD30DC4008E33E9 /* QPChatViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -549,6 +557,7 @@
 				285093E31DD2CF910071F96D /* QPHotViewController.xib in Resources */,
 				285093A91DD17CD30071F96D /* QPMeViewController.xib in Resources */,
 				285093A41DD17CB60071F96D /* QPMainViewController.xib in Resources */,
+				28831B191DD30DC4008E33E9 /* QPChatViewController.xib in Resources */,
 				285093661DD0D19C0071F96D /* Main.storyboard in Resources */,
 				285093E11DD1E1570071F96D /* QPShowCell.xib in Resources */,
 			);
@@ -617,6 +626,7 @@
 				285093B71DD1B5790071F96D /* QPHotViewController.m in Sources */,
 				285093DC1DD1DC5D0071F96D /* MJExtensionConfig.m in Sources */,
 				285093A81DD17CD30071F96D /* QPMeViewController.m in Sources */,
+				28831B181DD30DC4008E33E9 /* QPChatViewController.m in Sources */,
 				285093BC1DD1B5860071F96D /* QPNearViewController.m in Sources */,
 				285093CD1DD1D5DB0071F96D /* QPBaseHandler.m in Sources */,
 				2850939C1DD0F27D0071F96D /* QPBaseNavViewController.m in Sources */,
