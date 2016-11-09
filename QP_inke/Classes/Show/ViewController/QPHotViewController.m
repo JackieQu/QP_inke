@@ -9,6 +9,7 @@
 #import "QPHotViewController.h"
 #import "QPShowHandler.h"
 #import "QPShowCell.h"
+#import "QPPlayerViewController.h"
 
 static NSString * identifier = @"QPShowCell";
 
@@ -46,6 +47,19 @@ static NSString * identifier = @"QPShowCell";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     return 70 + SCREEN_WIDTH;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    QPLive * live = self.datalist[indexPath.row];
+    
+    QPPlayerViewController * playerVC = [[QPPlayerViewController alloc] init];
+    playerVC.live = live;
+    playerVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:playerVC animated:YES];
+    
+    /*系统自带播放器无法解码直播视频格式*/
 }
 
 - (void)viewDidLoad {
