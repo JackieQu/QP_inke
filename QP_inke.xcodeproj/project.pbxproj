@@ -57,6 +57,8 @@
 		28831B141DD30244008E33E9 /* QPPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28831B131DD30244008E33E9 /* QPPlayerViewController.m */; };
 		28831B181DD30DC4008E33E9 /* QPChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28831B161DD30DC4008E33E9 /* QPChatViewController.m */; };
 		28831B191DD30DC4008E33E9 /* QPChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28831B171DD30DC4008E33E9 /* QPChatViewController.xib */; };
+		28831B8C1DD84B11008E33E9 /* QPLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 28831B8B1DD84B11008E33E9 /* QPLocationManager.m */; };
+		28831B8E1DD84C02008E33E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28831B8D1DD84C02008E33E9 /* CoreLocation.framework */; };
 		2EA8396354D791C4E333129B /* libPods-QP_inke.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6804BBBFDF56398E5B793C2 /* libPods-QP_inke.a */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +142,9 @@
 		28831B151DD30DC4008E33E9 /* QPChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPChatViewController.h; sourceTree = "<group>"; };
 		28831B161DD30DC4008E33E9 /* QPChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPChatViewController.m; sourceTree = "<group>"; };
 		28831B171DD30DC4008E33E9 /* QPChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QPChatViewController.xib; sourceTree = "<group>"; };
+		28831B8A1DD84B11008E33E9 /* QPLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPLocationManager.h; sourceTree = "<group>"; };
+		28831B8B1DD84B11008E33E9 /* QPLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPLocationManager.m; sourceTree = "<group>"; };
+		28831B8D1DD84C02008E33E9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		7626B6083C112A1306665D19 /* Pods-QP_inke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QP_inke.release.xcconfig"; path = "Pods/Target Support Files/Pods-QP_inke/Pods-QP_inke.release.xcconfig"; sourceTree = "<group>"; };
 		DE8E208E258685779A435E7D /* Pods-QP_inke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QP_inke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QP_inke/Pods-QP_inke.debug.xcconfig"; sourceTree = "<group>"; };
 		F6804BBBFDF56398E5B793C2 /* libPods-QP_inke.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QP_inke.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28831B8E1DD84C02008E33E9 /* CoreLocation.framework in Frameworks */,
 				28831B111DD2F345008E33E9 /* VideoToolbox.framework in Frameworks */,
 				28831B0F1DD2F33C008E33E9 /* UIKit.framework in Frameworks */,
 				28831B0D1DD2F336008E33E9 /* QuartzCore.framework in Frameworks */,
@@ -260,6 +266,8 @@
 		285093761DD0D5670071F96D /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				28831B8A1DD84B11008E33E9 /* QPLocationManager.h */,
+				28831B8B1DD84B11008E33E9 /* QPLocationManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -458,6 +466,7 @@
 		90EF3D65A916A175EB95AC9D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28831B8D1DD84C02008E33E9 /* CoreLocation.framework */,
 				28831B101DD2F345008E33E9 /* VideoToolbox.framework */,
 				28831B0E1DD2F33C008E33E9 /* UIKit.framework */,
 				28831B0C1DD2F336008E33E9 /* QuartzCore.framework */,
@@ -623,6 +632,7 @@
 				285093C71DD1D2980071F96D /* UIImageView+SDWebImage.m in Sources */,
 				285093C01DD1C2E60071F96D /* QPMainTopView.m in Sources */,
 				2850938C1DD0D5670071F96D /* main.m in Sources */,
+				28831B8C1DD84B11008E33E9 /* QPLocationManager.m in Sources */,
 				285093B71DD1B5790071F96D /* QPHotViewController.m in Sources */,
 				285093DC1DD1DC5D0071F96D /* MJExtensionConfig.m in Sources */,
 				285093A81DD17CD30071F96D /* QPMeViewController.m in Sources */,
@@ -824,7 +834,7 @@
 					"\"WebP\"",
 					"-w",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "bing.bearychat.com.QP-inke";
+				PRODUCT_BUNDLE_IDENTIFIER = bing.bearychat.com.QP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -891,7 +901,7 @@
 					"\"WebP\"",
 					"-w",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "bing.bearychat.com.QP-inke";
+				PRODUCT_BUNDLE_IDENTIFIER = bing.bearychat.com.QP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

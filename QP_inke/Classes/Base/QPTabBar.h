@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, QPItemType) {
+typedef NS_ENUM(NSInteger, QPItemType) {
 
     QPItemTypeLive = 10,
     QPItemTypeShow = 100,
