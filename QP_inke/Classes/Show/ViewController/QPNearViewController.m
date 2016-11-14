@@ -10,6 +10,9 @@
 #import "QPShowHandler.h"
 #import "QPNearLiveCell.h"
 
+#define kMargin 5
+#define kItemWidth 100
+
 static NSString * identifier = @"QPNearLiveCell";
 
 @interface QPNearViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -21,6 +24,33 @@ static NSString * identifier = @"QPNearLiveCell";
 @end
 
 @implementation QPNearViewController
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSInteger count = self.collectionView.width / kItemWidth;
+    
+    CGFloat etraWidth = (self.collectionView.width - kMargin * (count + 1)) / count;
+    
+    return CGSizeMake(etraWidth, etraWidth +20);
+    //    CGFloat outInset = self.view.width - 2 * kMargin;
+    //    NSInteger count = outInset / kItemWidth;
+    //    NSInteger extraTotal = (NSInteger)(outInset - kMargin * (count - 1 ));
+    //
+    //    CGFloat itemWH;
+    //
+    //    if (extraTotal < count * kItemWidth) {
+    //
+    //        itemWH = extraTotal / count;
+    //
+    //    } else {
+    //
+    //        CGFloat extraWidth = extraTotal % kItemWidth;
+    //        itemWH = kItemWidth + extraWidth / count;
+    //    }
+    //    
+    //    return CGSizeMake(itemWH, itemWH + 25);
+    
+}
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     

@@ -24,6 +24,7 @@
     
     [self.headView downloadImage:[NSString stringWithFormat:@"%@%@",IMAGE_HOST,live.creator.portrait] placeholder:@"default_room"];
     self.distanceLabel.text = live.distance;
+    
 }
 
 - (void)awakeFromNib {
