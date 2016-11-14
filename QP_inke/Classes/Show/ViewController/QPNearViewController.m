@@ -7,31 +7,64 @@
 //
 
 #import "QPNearViewController.h"
+#import "QPShowHandler.h"
+#import "QPNearLiveCell.h"
 
-@interface QPNearViewController ()
+static NSString * identifier = @"QPNearLiveCell";
+
+@interface QPNearViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+@property (nonatomic, strong) NSArray * datalist;
 
 @end
 
 @implementation QPNearViewController
 
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    return self.datalist.count;
+    
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    QPNearLiveCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    cell.live = self.datalist[indexPath.row];
+    
+    return cell;
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self initUI];
+
+    [self loadData];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)initUI {
+    
+    [self.collectionView registerNib:[UINib nibWithNibName:@"QPNearLiveCell" bundle:nil] forCellWithReuseIdentifier:identifier];
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)loadData {
+    
+    [QPShowHandler executeGetNearLiveTaskWithSuccess:^(id obj) {
+        
+        self.datalist = obj;
+        [self.collectionView reloadData];
+        
+    } failed:^(id obj) {
+        NSLog(@"%@",obj);
+    }];
+    
 }
-*/
 
 @end

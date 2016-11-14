@@ -22,7 +22,7 @@
 @property (nonatomic, strong) NSString * streamAddr;
 @property (nonatomic, assign) NSInteger version;
 
-@property (nonatomic, strong) NSString * distance;
+@property (nonatomic, copy) NSString * distance;
 
 @property (nonatomic, assign ,getter=isShow) BOOL show;
 
