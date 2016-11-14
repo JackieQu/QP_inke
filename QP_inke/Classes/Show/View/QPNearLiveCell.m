@@ -18,6 +18,24 @@
 
 @implementation QPNearLiveCell
 
+- (void)showAnimation {
+    
+    if (self.live.isShow) {
+        return;
+    }
+    
+    self.layer.transform = CATransform3DMakeScale(0.1, 0.1, 1);
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        
+        self.layer.transform = CATransform3DMakeScale(1, 1, 1);
+        
+        self.live.show = YES;
+        
+    }];
+    
+}
+
 - (void)setLive:(QPLive *)live {
     
     _live = live;

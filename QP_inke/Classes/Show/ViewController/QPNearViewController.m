@@ -9,6 +9,7 @@
 #import "QPNearViewController.h"
 #import "QPShowHandler.h"
 #import "QPNearLiveCell.h"
+#import "QPPlayerViewController.h"
 
 #define kMargin 5
 #define kItemWidth 100
@@ -24,6 +25,13 @@ static NSString * identifier = @"QPNearLiveCell";
 @end
 
 @implementation QPNearViewController
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    QPNearLiveCell * c = (QPNearLiveCell *)cell;
+    
+    [c showAnimation];
+}
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -68,6 +76,18 @@ static NSString * identifier = @"QPNearLiveCell";
     
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+    
+    QPLive * live = self.datalist[indexPath.row];
+    
+    QPPlayerViewController * playVC = [[QPPlayerViewController alloc] init];
+    playVC.live = live;
+    [self.navigationController pushViewController:playVC animated:YES];
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -87,7 +107,7 @@ static NSString * identifier = @"QPNearLiveCell";
 - (void)loadData {
     
     [QPShowHandler executeGetNearLiveTaskWithSuccess:^(id obj) {
-        
+
         self.datalist = obj;
         [self.collectionView reloadData];
         

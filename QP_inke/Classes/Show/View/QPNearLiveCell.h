@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) QPLive * live;
 
+- (void)showAnimation;
+
 @end
