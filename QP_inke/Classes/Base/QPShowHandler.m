@@ -10,8 +10,34 @@
 #import "HttpTool.h"
 #import "QPLive.h"
 #import "QPLocationManager.h"
+#import "QPAd.h"
 
 @implementation QPShowHandler
+
++ (void)executeGetAdTaskWithSuccess:(SuccessBlock)success failed:(FailedBlock)failed {
+    
+    [HttpTool getWithPath:API_Advertise params:nil success:^(id json) {
+        
+        if ([json[@"dm_error"] integerValue]) {
+            
+            failed(json);
+            
+        } else {
+            //如果返回信息正确
+            //数据解析
+            QPAd * ad = [QPAd mj_objectWithKeyValues:json[@"resources"][0]];
+            
+            success(ad);
+        }
+
+        
+    } failure:^(NSError *error) {    
+        
+        failed(error);
+        
+    }];
+
+}
 
 + (void)executeGetNearLiveTaskWithSuccess:(SuccessBlock)success failed:(FailedBlock)failed {
     
@@ -42,7 +68,6 @@
         failed(error);
 
     }];
-    
     
 }
 

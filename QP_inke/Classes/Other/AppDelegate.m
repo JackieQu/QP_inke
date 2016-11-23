@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "QPTabBarViewController.h"
 #import "QPLocationManager.h"
+#import "QPAdView.h"
 
 @interface AppDelegate ()
 
@@ -24,11 +25,14 @@
     
     self.window.rootViewController = mainVC;
     
+    [self.window makeKeyAndVisible];
+    
     [[QPLocationManager sharedManager] getGps:^(NSString *lat, NSString *lon) {
-        
         NSLog(@"%@,%@",lat,lon);
-        
     }];
+    
+    QPAdView * adView = [QPAdView loadAdView];
+    [self.window addSubview:adView];
     
     return YES;
 }
