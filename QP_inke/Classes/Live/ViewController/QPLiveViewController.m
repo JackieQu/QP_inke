@@ -7,6 +7,7 @@
 //
 
 #import "QPLiveViewController.h"
+#import "LFLivePreview.h"
 
 @interface QPLiveViewController ()
 
@@ -18,6 +19,20 @@
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
+}
+
+- (IBAction)startLive:(id)sender {
+    
+    UIView * backView = [[UIView alloc] initWithFrame:self.view.bounds];
+    backView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:backView];
+    
+    LFLivePreview * preView = [[LFLivePreview alloc] initWithFrame:self.view.bounds];
+    preView.vc = self;
+    [self.view addSubview:preView];
+    
+    // 开启直播
+    [preView startLive];
 }
 
 - (void)viewDidLoad {

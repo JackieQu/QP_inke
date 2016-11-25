@@ -25,12 +25,22 @@
     
     _live = live;
     
-    [self.coverView downloadImage:[NSString stringWithFormat:@"%@%@",IMAGE_HOST,live.creator.portrait] placeholder:@"default_room"];
-    [self.headView downloadImage:[NSString stringWithFormat:@"%@%@",IMAGE_HOST,live.creator.portrait] placeholder:@"default_room"];
     self.nameLabel.text     = live.creator.nick;
     self.locationLabel.text = live.city;
     self.onLineLabel.text   = [@(live.onlineUsers) stringValue];
+    
+    if ([live.creator.portrait isEqualToString:@"QPIcon"]) {
         
+        self.headView.image = [UIImage imageNamed:@"QPIcon"];
+        self.coverView.image = [UIImage imageNamed:@"QPIcon"];
+        
+    } else {
+        
+        [self.headView downloadImage:[NSString stringWithFormat:@"%@%@",IMAGE_HOST,live.creator.portrait] placeholder:@"default_room"];
+        [self.coverView downloadImage:[NSString stringWithFormat:@"%@%@",IMAGE_HOST,live.creator.portrait] placeholder:@"default_room"];
+
+    }
+
 }
 
 - (void)awakeFromNib {

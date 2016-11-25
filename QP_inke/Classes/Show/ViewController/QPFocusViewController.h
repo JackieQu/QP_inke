@@ -8,6 +8,6 @@
 
 #import "QPBaseViewController.h"
 
-@interface QPFocusViewController : QPBaseViewController
+@interface QPFocusViewController : UITableViewController
 
 @end

@@ -88,7 +88,6 @@ static NSString * identifier = @"QPShowCell";
         NSLog(@"%@",obj);
     }];
     
-    
 }
 
 @end
