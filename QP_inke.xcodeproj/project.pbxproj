@@ -64,6 +64,8 @@
 		2893CB9D1DE593E000AA722B /* QPAdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2893CB9C1DE593E000AA722B /* QPAdView.xib */; };
 		2893CBA01DE5E98500AA722B /* QPCacheHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2893CB9F1DE5E98500AA722B /* QPCacheHelper.m */; };
 		2893CBA31DE83D6C00AA722B /* LFLivePreview.m in Sources */ = {isa = PBXBuildFile; fileRef = 2893CBA21DE83D6C00AA722B /* LFLivePreview.m */; };
+		2893CBA71DE9B69700AA722B /* QPLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2893CBA51DE9B69700AA722B /* QPLoginViewController.m */; };
+		2893CBA81DE9B69700AA722B /* QPLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2893CBA61DE9B69700AA722B /* QPLoginViewController.xib */; };
 		2EA8396354D791C4E333129B /* libPods-QP_inke.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6804BBBFDF56398E5B793C2 /* libPods-QP_inke.a */; };
 /* End PBXBuildFile section */
 
@@ -159,6 +161,9 @@
 		2893CB9F1DE5E98500AA722B /* QPCacheHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPCacheHelper.m; sourceTree = "<group>"; };
 		2893CBA11DE83D6C00AA722B /* LFLivePreview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFLivePreview.h; sourceTree = "<group>"; };
 		2893CBA21DE83D6C00AA722B /* LFLivePreview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFLivePreview.m; sourceTree = "<group>"; };
+		2893CBA41DE9B69700AA722B /* QPLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPLoginViewController.h; sourceTree = "<group>"; };
+		2893CBA51DE9B69700AA722B /* QPLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPLoginViewController.m; sourceTree = "<group>"; };
+		2893CBA61DE9B69700AA722B /* QPLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QPLoginViewController.xib; sourceTree = "<group>"; };
 		7626B6083C112A1306665D19 /* Pods-QP_inke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QP_inke.release.xcconfig"; path = "Pods/Target Support Files/Pods-QP_inke/Pods-QP_inke.release.xcconfig"; sourceTree = "<group>"; };
 		DE8E208E258685779A435E7D /* Pods-QP_inke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QP_inke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QP_inke/Pods-QP_inke.debug.xcconfig"; sourceTree = "<group>"; };
 		F6804BBBFDF56398E5B793C2 /* libPods-QP_inke.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QP_inke.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -221,10 +226,10 @@
 		2850935B1DD0D19C0071F96D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				285093641DD0D19C0071F96D /* Main.storyboard */,
 				285093671DD0D19C0071F96D /* Assets.xcassets */,
-				285093691DD0D19C0071F96D /* LaunchScreen.storyboard */,
 				2850936C1DD0D19C0071F96D /* Info.plist */,
+				285093641DD0D19C0071F96D /* Main.storyboard */,
+				285093691DD0D19C0071F96D /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -363,6 +368,9 @@
 				285093A51DD17CD30071F96D /* QPMeViewController.h */,
 				285093A61DD17CD30071F96D /* QPMeViewController.m */,
 				285093A71DD17CD30071F96D /* QPMeViewController.xib */,
+				2893CBA41DE9B69700AA722B /* QPLoginViewController.h */,
+				2893CBA51DE9B69700AA722B /* QPLoginViewController.m */,
+				2893CBA61DE9B69700AA722B /* QPLoginViewController.xib */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -585,6 +593,7 @@
 				28831B931DDA046F008E33E9 /* QPNearLiveCell.xib in Resources */,
 				285093AE1DD1A3D90071F96D /* QPLiveViewController.xib in Resources */,
 				285093BD1DD1B5860071F96D /* QPNearViewController.xib in Resources */,
+				2893CBA81DE9B69700AA722B /* QPLoginViewController.xib in Resources */,
 				285093681DD0D19C0071F96D /* Assets.xcassets in Resources */,
 				285093E31DD2CF910071F96D /* QPHotViewController.xib in Resources */,
 				285093A91DD17CD30071F96D /* QPMeViewController.xib in Resources */,
@@ -663,6 +672,7 @@
 				285093A81DD17CD30071F96D /* QPMeViewController.m in Sources */,
 				28831B181DD30DC4008E33E9 /* QPChatViewController.m in Sources */,
 				285093BC1DD1B5860071F96D /* QPNearViewController.m in Sources */,
+				2893CBA71DE9B69700AA722B /* QPLoginViewController.m in Sources */,
 				285093CD1DD1D5DB0071F96D /* QPBaseHandler.m in Sources */,
 				28831B921DDA046F008E33E9 /* QPNearLiveCell.m in Sources */,
 				2893CBA01DE5E98500AA722B /* QPCacheHelper.m in Sources */,

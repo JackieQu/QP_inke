@@ -80,6 +80,7 @@
             failed(json);
             
         } else {
+            
             //如果返回信息正确
             //数据解析
             NSArray * lives = [QPLive mj_objectArrayWithKeyValuesArray:json[@"lives"]];
