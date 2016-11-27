@@ -56,6 +56,8 @@ static NSString * identifier = @"focus";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.\
     
+    self.view.backgroundColor = RGB(238, 245, 245);
+    
     [self initUI];
     
     [self loadData];

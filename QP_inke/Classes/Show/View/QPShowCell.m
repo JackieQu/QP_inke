@@ -32,7 +32,7 @@
     if ([live.creator.portrait isEqualToString:@"QPIcon"]) {
         
         self.headView.image = [UIImage imageNamed:@"QPIcon"];
-        self.coverView.image = [UIImage imageNamed:@"QPIcon"];
+        self.coverView.image = [UIImage imageNamed:@"QPCover"];
         
     } else {
         

@@ -53,7 +53,7 @@
     
     //删除tabbar阴影线
     [[UITabBar appearance] setShadowImage:[UIImage new]];
-    [[UITabBar appearance] setBackgroundImage:[UIImage   new]];
+    [[UITabBar appearance] setBackgroundImage:[UIImage new]];
 }
 
 - (void)configViewControllers {

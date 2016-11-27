@@ -68,6 +68,7 @@
 		2893CBAD1DEA704900AA722B /* QPMeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2893CBAB1DEA704900AA722B /* QPMeViewController.xib */; };
 		2893CBB01DEA717A00AA722B /* QPMeInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2893CBAF1DEA717A00AA722B /* QPMeInfoView.m */; };
 		2893CBB21DEA719100AA722B /* QPMeInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2893CBB11DEA719100AA722B /* QPMeInfoView.xib */; };
+		2893CBB51DEB080900AA722B /* QPSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2893CBB41DEB080900AA722B /* QPSetting.m */; };
 		2EA8396354D791C4E333129B /* libPods-QP_inke.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6804BBBFDF56398E5B793C2 /* libPods-QP_inke.a */; };
 /* End PBXBuildFile section */
 
@@ -169,6 +170,8 @@
 		2893CBAE1DEA717A00AA722B /* QPMeInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPMeInfoView.h; sourceTree = "<group>"; };
 		2893CBAF1DEA717A00AA722B /* QPMeInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPMeInfoView.m; sourceTree = "<group>"; };
 		2893CBB11DEA719100AA722B /* QPMeInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QPMeInfoView.xib; sourceTree = "<group>"; };
+		2893CBB31DEB080900AA722B /* QPSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QPSetting.h; sourceTree = "<group>"; };
+		2893CBB41DEB080900AA722B /* QPSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QPSetting.m; sourceTree = "<group>"; };
 		7626B6083C112A1306665D19 /* Pods-QP_inke.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QP_inke.release.xcconfig"; path = "Pods/Target Support Files/Pods-QP_inke/Pods-QP_inke.release.xcconfig"; sourceTree = "<group>"; };
 		DE8E208E258685779A435E7D /* Pods-QP_inke.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QP_inke.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QP_inke/Pods-QP_inke.debug.xcconfig"; sourceTree = "<group>"; };
 		F6804BBBFDF56398E5B793C2 /* libPods-QP_inke.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QP_inke.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -356,6 +359,8 @@
 		2850937D1DD0D5670071F96D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2893CBB31DEB080900AA722B /* QPSetting.h */,
+				2893CBB41DEB080900AA722B /* QPSetting.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -679,6 +684,7 @@
 				2893CBA31DE83D6C00AA722B /* LFLivePreview.m in Sources */,
 				285093B71DD1B5790071F96D /* QPHotViewController.m in Sources */,
 				285093DC1DD1DC5D0071F96D /* MJExtensionConfig.m in Sources */,
+				2893CBB51DEB080900AA722B /* QPSetting.m in Sources */,
 				28831B181DD30DC4008E33E9 /* QPChatViewController.m in Sources */,
 				285093BC1DD1B5860071F96D /* QPNearViewController.m in Sources */,
 				2893CBA71DE9B69700AA722B /* QPLoginViewController.m in Sources */,

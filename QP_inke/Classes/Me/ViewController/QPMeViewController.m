@@ -7,49 +7,160 @@
 //
 
 #import "QPMeViewController.h"
+#import "QPMeInfoView.h"
+#import "QPSetting.h"
 
 @interface QPMeViewController ()
+
+@property (nonatomic, strong) NSMutableArray * datalist;
+
+@property (nonatomic, strong) QPMeInfoView * infoView;
 
 @end
 
 @implementation QPMeViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewWillAppear:(BOOL)animated {
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    [super viewWillAppear:animated];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.navigationController.navigationBarHidden = YES;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [super viewWillDisappear:animated];
+    
+    self.navigationController.navigationBarHidden = NO;
+}
+
+- (QPMeInfoView *)infoView {
+    
+    if (!_infoView) {
+        _infoView = [QPMeInfoView loadInfoView];
+//        _infoView.frame = CGRectMake(0, 0, 0, SCREEN_HEIGHT * 0.3);
+    }
+    return _infoView;
+    
+}
+
+
+- (NSMutableArray *)dataList {
+    
+    if (!_datalist) {
+        _datalist = [NSMutableArray array];
+    }
+    return _datalist;
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    [self initUI];
+    
+    [self loadData];
+}
+
+- (void)initUI {
+
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+//    self.tableView.tableHeaderView = self.infoView;
+    self.tableView.rowHeight = 60;
+    self.tableView.sectionFooterHeight = 5;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
+
+    
+}
+
+- (void)loadData {
+    
+    QPSetting * set1 = [[QPSetting alloc] init];
+    set1.title = @"映客贡献榜";
+    set1.subTitle = @"";
+    set1.vcName = @"";
+    
+    QPSetting * set2 = [[QPSetting alloc] init];
+    set2.title = @"收益";
+    set2.subTitle = @"0映票";
+    set2.vcName = @"";
+    
+    QPSetting * set3 = [[QPSetting alloc] init];
+    set3.title = @"账户";
+    set3.subTitle = @"0钻石";
+    set3.vcName = @"";
+    
+    QPSetting * set4 = [[QPSetting alloc] init];
+    set4.title = @"等级";
+    set4.subTitle = @"3级";
+    set4.vcName = @"";
+    
+    QPSetting * set5 = [[QPSetting alloc] init];
+    set5.title = @"实名认证";
+    set5.subTitle = @"";
+    set5.vcName = @"";
+    
+    QPSetting * set6 = [[QPSetting alloc] init];
+    set6.title = @"设置";
+    set6.subTitle = @"";
+    set6.vcName = @"";
+    
+    
+    NSArray * arr1 = @[set1,set2,set3];
+    NSArray * arr2 = @[set4,set5];
+    NSArray * arr3 = @[set6];
+    self.datalist = [@[arr1,arr2,arr3] mutableCopy];
+    
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    return self.datalist.count;;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+
+    NSArray * arr = self.datalist[section];
+
+    return arr.count;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
-    // Configure the cell...
+    UITableViewCell * cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:nil];
+    
+    QPSetting * set = self.datalist[indexPath.section][indexPath.row];
+    
+    cell.textLabel.text = set.title;
+    cell.textLabel.textColor = [UIColor grayColor];
+    cell.textLabel.font = [UIFont systemFontOfSize:15];
+    cell.detailTextLabel.text = set.subTitle;
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:12];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }
-*/
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if (section == 0) {
+        return self.infoView;
+    }
+    
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
+    if (section == 0) {
+        return SCREEN_HEIGHT / 2;
+    }
+    
+    return 0.1;
+}
 
 /*
 // Override to support conditional editing of the table view.

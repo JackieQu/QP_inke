@@ -109,7 +109,7 @@ static NSInteger showTime = 3;
         } else {
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.timeLabel.text = [NSString stringWithFormat:@"跳过: %zd",timeout];
+                self.timeLabel.text = [NSString stringWithFormat:@"跳过 %zd",timeout];
             });
             
             timeout --;
