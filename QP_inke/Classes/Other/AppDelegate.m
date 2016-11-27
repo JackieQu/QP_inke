@@ -10,6 +10,7 @@
 #import "QPTabBarViewController.h"
 #import "QPLocationManager.h"
 #import "QPAdView.h"
+#import "QPLoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,7 @@
     // Override point for customization after application launch.
     
     QPTabBarViewController * mainVC = [[QPTabBarViewController alloc] init];
+//    QPLoginViewController * mainVC = [[QPLoginViewController alloc] init];
     
     self.window.rootViewController = mainVC;
     

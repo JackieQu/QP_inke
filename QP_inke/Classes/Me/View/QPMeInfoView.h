@@ -1,5 +1,5 @@
 //
-//  QPMeViewController.h
+//  QPMeInfoView.h
 //  QP_inke
 //
 //  Created by 曲鹏 on 2016/11/27.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QPMeViewController : UITableViewController
+@interface QPMeInfoView : UIView
 
 @end
