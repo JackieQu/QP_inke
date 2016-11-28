@@ -10,8 +10,8 @@
 
 @interface QPShowCell ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *coverView;
 @property (weak, nonatomic) IBOutlet UIImageView *headView;
+@property (weak, nonatomic) IBOutlet UIImageView *coverView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *onLineLabel;
@@ -32,7 +32,7 @@
     if ([live.creator.portrait isEqualToString:@"QPIcon"]) {
         
         self.headView.image = [UIImage imageNamed:@"QPIcon"];
-        self.coverView.image = [UIImage imageNamed:@"QPCover"];
+        self.coverView.image = [UIImage imageNamed:@"QPIcon"];
         
     } else {
         
@@ -45,7 +45,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
     
     self.headView.layer.cornerRadius  = 25;
     self.headView.layer.masksToBounds = YES;
@@ -54,7 +53,6 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
-    // Configure the view for the selected state
 }
 
 @end

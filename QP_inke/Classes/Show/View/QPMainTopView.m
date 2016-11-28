@@ -42,11 +42,11 @@
             [self.buttons addObject:btn];
             
             NSString * btnName = titles[i];
-            //设置按钮文字
+            // 设置按钮文字
             [btn setTitle:btnName forState:UIControlStateNormal];
-            //设置按钮颜色
+            // 设置按钮颜色
             [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            //设置字体
+            // 设置字体
             btn.titleLabel.font = [UIFont systemFontOfSize:18];
             
             btn.tag = i;
@@ -59,13 +59,20 @@
             
             if (i == 1) {
                 
+                // 添加下方白线
+                // 白线宽度 = 按钮文字宽度
+                // 白线中点 = 按钮中点
+                
                 CGFloat h = 2;
                 CGFloat y = 40;
                 
+                // 先计算文字尺寸，再给 label 赋值
                 [btn.titleLabel sizeToFit];
                 
                 self.lineView = [[UIView alloc] init];
                 self.lineView.backgroundColor = [UIColor whiteColor];
+
+                // 位置和大小
                 self.lineView.height  = h;
                 self.lineView.width   = btn.titleLabel.width;
                 self.lineView.top     = y;

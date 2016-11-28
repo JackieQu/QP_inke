@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@interface QPBaseHandler : NSObject
+
 /**
  处理完成事件
  */
@@ -26,7 +28,5 @@ typedef void(^SuccessBlock)(id obj);
  @param obj 错误信息
  */
 typedef void(^FailedBlock)(id obj);
-
-@interface QPBaseHandler : NSObject
 
 @end

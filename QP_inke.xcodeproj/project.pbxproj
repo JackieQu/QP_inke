@@ -246,13 +246,13 @@
 			isa = PBXGroup;
 			children = (
 				285093731DD0D5670071F96D /* Base */,
-				285093741DD0D5670071F96D /* Helpers */,
-				285093771DD0D5670071F96D /* Libs */,
+				285093871DD0D5670071F96D /* Show */,
 				285093781DD0D5670071F96D /* Live */,
 				2850937C1DD0D5670071F96D /* Me */,
 				285093801DD0D5670071F96D /* NetWork */,
 				285093811DD0D5670071F96D /* Other */,
-				285093871DD0D5670071F96D /* Show */,
+				285093741DD0D5670071F96D /* Helpers */,
+				285093771DD0D5670071F96D /* Libs */,
 			);
 			path = Classes;
 			sourceTree = "<group>";

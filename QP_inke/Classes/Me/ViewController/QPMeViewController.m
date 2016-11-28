@@ -64,12 +64,13 @@
 
 - (void)initUI {
 
+    self.view.backgroundColor = RGB(238, 245, 245);
     
     self.automaticallyAdjustsScrollViewInsets = NO;
 //    self.tableView.tableHeaderView = self.infoView;
     self.tableView.rowHeight = 60;
-    self.tableView.sectionFooterHeight = 5;
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 30, 0);
+    self.tableView.sectionFooterHeight = 10;
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 40, 0);
 
     
 }
@@ -156,7 +157,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
     if (section == 0) {
-        return SCREEN_HEIGHT / 2;
+        return SCREEN_HEIGHT * 0.55;
     }
     
     return 0.1;

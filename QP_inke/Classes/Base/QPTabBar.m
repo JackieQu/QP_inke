@@ -10,9 +10,9 @@
 
 @interface QPTabBar ()
 
-@property (nonatomic, strong) UIImageView * tabbgView;
-
 @property (nonatomic, strong) NSArray * datalist;
+
+@property (nonatomic, strong) UIImageView * tabbgView;
 
 @property (nonatomic, strong) UIButton * lastItem;
 
@@ -27,20 +27,11 @@
     if (!_liveButton) {
         _liveButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_liveButton setImage:[UIImage imageNamed:@"tab_launch"] forState:UIControlStateNormal];
-//        [_liveButton sizeToFit];
+        [_liveButton sizeToFit];
         _liveButton.tag = QPItemTypeLive;
         [_liveButton addTarget:self action:@selector(clickItem:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _liveButton;
-    
-}
-
-- (NSArray *)datalist {
-    
-    if (!_datalist) {
-        _datalist = @[@"tab_live",@"tab_me"];
-    }
-    return _datalist;
     
 }
 
@@ -53,19 +44,29 @@
     
 }
 
-- (instancetype)initWithFrame:(CGRect)frame
-{
+- (NSArray *)datalist {
+    
+    if (!_datalist) {
+        _datalist = @[@"tab_live",@"tab_me"];
+    }
+    return _datalist;
+    
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    
     self = [super initWithFrame:frame];
     if (self) {
         
-        //装载背景
+        // 装载背景
         [self addSubview:self.tabbgView];
         
+        // 装载 item
         for (NSInteger i = 0; i < self.datalist.count; i ++) {
             
             UIButton * item = [UIButton buttonWithType:UIButtonTypeCustom];
             
-            //不让图片在高亮下改变
+            // 高亮下图片不改变
             item.adjustsImageWhenHighlighted = NO;
             
             [item setImage:[UIImage imageNamed:self.datalist[i]] forState:UIControlStateNormal];
@@ -84,7 +85,7 @@
             [self addSubview:item];
         }
         
-        //添加直播按钮
+        // 添加直播按钮
         [self addSubview:self.liveButton];
         
     }

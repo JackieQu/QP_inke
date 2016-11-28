@@ -19,6 +19,8 @@
 
 @implementation QPTabBarViewController
 
+#pragma mark - getters and setters
+
 - (QPTabBar *)qpTabbar {
     
     if (!_qpTabbar) {
@@ -29,9 +31,12 @@
     
 }
 
+#pragma mark - QPTabBarDelegate
+
 - (void)tabbar:(QPTabBar *)tabbar clickButton:(QPItemType)idx {
     
     if (idx != QPItemTypeLive) {
+        // 当前 tabbar 索引
         self.selectedIndex = idx - QPItemTypeShow;
         return;
     }
@@ -43,18 +48,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
-    //加载控制器
+    // 加载控制器
     [self configViewControllers];
     
-    //加载tabbar
+    // 加载 tabbar
     [self.tabBar addSubview:self.qpTabbar];
     
-    //删除tabbar阴影线
+    // 删除 tabbar 阴影线
     [[UITabBar appearance] setShadowImage:[UIImage new]];
     [[UITabBar appearance] setBackgroundImage:[UIImage new]];
+    
 }
+
+#pragma mark - private methods
 
 - (void)configViewControllers {
     

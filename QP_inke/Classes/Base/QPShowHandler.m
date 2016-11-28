@@ -41,11 +41,11 @@
 
 + (void)executeGetNearLiveTaskWithSuccess:(SuccessBlock)success failed:(FailedBlock)failed {
     
-//    QPLocationManager * manager = [QPLocationManager sharedManager];
+    QPLocationManager * manager = [QPLocationManager sharedManager];
     
-    NSDictionary * params = @{@"uid":@"969957700",
-                              @"latitude":@"40",  //manager.lat
-                              @"longitude":@"120"  //manager.lon
+    NSDictionary * params = @{@"uid"      : @"85720783",
+                              @"latitude" : manager.lat, // @"40"
+                              @"longitude": manager.lon  // @"120"
                               };
     
     [HttpTool getWithPath:API_NearLive params:params success:^(id json) {
